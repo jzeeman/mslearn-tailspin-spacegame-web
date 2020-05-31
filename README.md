@@ -1,4 +1,4 @@
-[![Build Status](https://zeeman.visualstudio.com/Space%20Game%20-%20web%20-%20Pipeline/_apis/build/status/jzeeman.mslearn-tailspin-spacegame-web?branchName=master)](https://zeeman.visualstudio.com/Space%20Game%20-%20web%20-%20Pipeline/_build/latest?definitionId=3&branchName=master)
+[![Build Status](https://zeeman.visualstudio.com/Space%20Game%20-%20web%20-%20Pipeline/_apis/build/status/jzeeman.mslearn-tailspin-spacegame-web?branchName=failed-test)](https://zeeman.visualstudio.com/Space%20Game%20-%20web%20-%20Pipeline/_build/latest?definitionId=3&branchName=failed-test)
 
 # Contributing
 
