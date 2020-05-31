@@ -17,11 +17,14 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
+<<<<<<< HEAD
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK 2.1.505 for SonarCloud'
   inputs:
     version: '2.1.505'
 
+=======
+>>>>>>> 1ed6a2e30a95a134dc32365772f63783676c38b1
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
@@ -43,6 +46,7 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
+<<<<<<< HEAD
 - task: SonarCloudPrepare@1
   displayName: 'Prepare SonarCloud analysis'
   inputs:
@@ -62,6 +66,8 @@ steps:
       eq(variables['System.PullRequest.TargetBranch'], 'master')
     )
 
+=======
+>>>>>>> 1ed6a2e30a95a134dc32365772f63783676c38b1
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
@@ -80,7 +86,11 @@ steps:
   displayName: 'Run unit tests - $(buildConfiguration)'
   inputs:
     command: 'test'
+<<<<<<< HEAD
     arguments: '--no-build --configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura%2copencover" /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+=======
+    arguments: '--no-build --configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+>>>>>>> 1ed6a2e30a95a134dc32365772f63783676c38b1
     publishTestResults: true
     projects: '**/*.Tests.csproj'
 
@@ -88,6 +98,7 @@ steps:
     reportgenerator -reports:$(Build.SourcesDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/CodeCoverage -reporttypes:HtmlInline_AzurePipelines
   displayName: 'Create code coverage report'
 
+<<<<<<< HEAD
 - task: SonarCloudAnalyze@1
   displayName: 'Run SonarCloud code analysis'
   condition: |
@@ -108,6 +119,8 @@ steps:
       eq(variables['System.PullRequest.TargetBranch'], 'master')
     )
 
+=======
+>>>>>>> 1ed6a2e30a95a134dc32365772f63783676c38b1
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
   inputs:
@@ -125,4 +138,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
+<<<<<<< HEAD
   condition: succeeded()
+=======
+  condition: succeeded()
+>>>>>>> 1ed6a2e30a95a134dc32365772f63783676c38b1
